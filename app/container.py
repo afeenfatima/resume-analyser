@@ -5,9 +5,9 @@ from __future__ import annotations
 import streamlit as st
 from openai import OpenAI
 
-from app.config.settings import Settings
-from app.infrastructure.openai_gateway import OpenAIAnalysisGateway
-from app.services.resume_service import ResumeAnalysisService
+from config.settings import Settings
+from infrastructure.openai_gateway import OpenAIAnalysisGateway
+from services.resume_service import ResumeAnalysisService
 
 
 @st.cache_resource
