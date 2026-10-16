@@ -15,7 +15,7 @@ from services.resume_service import (
     InvalidAnalysisResponseError,
     InvalidResumeError,
 )
-from app.utils.logging_config import configure_logging, log_unexpected_error
+from utils.logging_config import configure_logging, log_unexpected_error
 
 logger = logging.getLogger(__name__)
 
