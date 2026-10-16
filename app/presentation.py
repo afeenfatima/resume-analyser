@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from .services.resume_service import ResumeAnalysis
+from services.resume_service import ResumeAnalysis
 
 
 def _render_list(title: str, values: tuple[str, ...]) -> None:
