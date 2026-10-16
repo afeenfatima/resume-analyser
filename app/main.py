@@ -7,10 +7,10 @@ from uuid import uuid4
 
 import streamlit as st
 
-from app.container import get_resume_analysis_service
-from app.config.settings import ConfigurationError, Settings
-from app.presentation import render_analysis
-from app.services.resume_service import (
+from container import get_resume_analysis_service
+from config.settings import ConfigurationError, Settings
+from presentation import render_analysis
+from services.resume_service import (
     AIProviderError,
     InvalidAnalysisResponseError,
     InvalidResumeError,
