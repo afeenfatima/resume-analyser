@@ -6,8 +6,8 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from app import main
-from app.config.settings import Settings
-from app.services.resume_service import ResumeAnalysis
+from config.settings import Settings
+from services.resume_service import ResumeAnalysis
 
 
 class FakeAnalysisService:
@@ -45,7 +45,7 @@ def configure_app(
 
 def _run_app() -> None:
     """Import the app inside the isolated Streamlit test script."""
-    from app.main import main as render_main
+    from main import main as render_main
 
     render_main()
 
@@ -56,12 +56,12 @@ def test_analysis_requires_consent(monkeypatch: pytest.MonkeyPatch) -> None:
     configure_app(monkeypatch, service)
     app = AppTest.from_function(_run_app).run()
 
-    app.text_area[0].set_value("Example resume")
-    app.button[0].click().run()
+    text_area[0].set_value("Example resume")
+    button[0].click().run()
 
     assert service.submitted_resumes == []
     assert "Please confirm the data-processing notice before continuing." in [
-        element.value for element in app.warning
+        element.value for element in warning
     ]
 
 
@@ -73,15 +73,15 @@ def test_analysis_result_persists_until_resume_changes(
     configure_app(monkeypatch, service)
     app = AppTest.from_function(_run_app).run()
 
-    app.text_area[0].set_value("Example resume")
-    app.checkbox[0].check()
-    app.button[0].click().run()
+    text_area[0].set_value("Example resume")
+    checkbox[0].check()
+    button[0].click().run()
 
     assert service.submitted_resumes == ["Example resume"]
-    assert app.session_state["analysis_result"].summary == "Test summary"
+    assert session_state["analysis_result"].summary == "Test summary"
 
-    app.run()
-    assert app.session_state["analysis_result"].summary == "Test summary"
+    run()
+    assert session_state["analysis_result"].summary == "Test summary"
 
-    app.text_area[0].set_value("Updated resume").run()
-    assert "analysis_result" not in app.session_state
+    text_area[0].set_value("Updated resume").run()
+    assert "analysis_result" not in session_state

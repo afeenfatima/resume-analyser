@@ -6,7 +6,7 @@ import logging
 
 from openai import APIError, OpenAI
 
-from app.services.resume_service import (
+from services.resume_service import (
     AIProviderError,
     InvalidAnalysisResponseError,
 )

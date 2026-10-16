@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from app.config import settings as settings_module
-from app.config.settings import ConfigurationError, Settings
+from config import settings as settings_module
+from config.settings import ConfigurationError, Settings
 
 
 @pytest.fixture(autouse=True)

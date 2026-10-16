@@ -6,7 +6,7 @@ import json
 from dataclasses import dataclass
 from typing import Protocol
 
-from app.prompts.resume_prompt import SYSTEM_PROMPT, build_resume_prompt
+from prompts.resume_prompt import SYSTEM_PROMPT, build_resume_prompt
 
 _TEXT_FIELDS = ("summary", "experience_assessment")
 _LIST_FIELDS = (

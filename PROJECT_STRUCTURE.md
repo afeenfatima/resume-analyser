@@ -104,7 +104,7 @@ ai-resume-analyzer/
 │   ├── run_worker.py
 │   └── backup_database.py
 └── var/                         # Local runtime data; never commit
-    ├── app.sqlite3
+    ├── sqlite3
     └── resumes/
 ```
 

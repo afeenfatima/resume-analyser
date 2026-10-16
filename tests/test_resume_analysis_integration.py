@@ -9,8 +9,8 @@ from unittest.mock import Mock
 import pytest
 from openai import APIError
 
-from app.infrastructure.openai_gateway import OpenAIAnalysisGateway
-from app.services.resume_service import (
+from infrastructure.openai_gateway import OpenAIAnalysisGateway
+from services.resume_service import (
     AIProviderError,
     InvalidResumeError,
     ResumeAnalysisService,

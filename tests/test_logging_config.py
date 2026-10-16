@@ -6,7 +6,7 @@ import logging
 
 import pytest
 
-from app.utils.logging_config import log_unexpected_error
+from utils.logging_config import log_unexpected_error
 
 
 def test_unexpected_error_log_omits_exception_message(

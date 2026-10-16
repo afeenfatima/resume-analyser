@@ -217,7 +217,7 @@ ai_resume_analyzer/
 ├── src/
 │   └── resume_analyzer/
 │       ├── __init__.py
-│       ├── app.py              # Streamlit entry point
+│       ├── py              # Streamlit entry point
 │       ├── config.py           # Validated settings; no secrets committed
 │       ├── ui/
 │       │   ├── pages/
@@ -257,7 +257,7 @@ ai_resume_analyzer/
 │   ├── fixtures/
 │   └── conftest.py
 └── var/                        # Runtime data only; excluded from source control
-    ├── app.sqlite3
+    ├── sqlite3
     └── resumes/
 ```
 

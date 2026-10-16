@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from app.services.resume_service import (
+from services.resume_service import (
     AIProviderError,
     InvalidAnalysisResponseError,
     InvalidResumeError,
