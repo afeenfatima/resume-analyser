@@ -20,7 +20,7 @@ def get_resume_analysis_service() -> ResumeAnalysisService:
     settings = Settings.from_env()
     
     return ResumeAnalysisService(
-        gateway=OpenAIAnalysisGateway(
+        gateway=geminiAnalysisGateway(
              settings.gemini_api_key,
              settings.gemini_model,
 )
