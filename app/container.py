@@ -23,6 +23,6 @@ def get_resume_analysis_service() -> ResumeAnalysisService:
         gateway=geminiAnalysisGateway(
              settings.gemini_api_key,
              settings.gemini_model,
-)
+),
         max_resume_characters=settings.max_resume_characters,
     )
