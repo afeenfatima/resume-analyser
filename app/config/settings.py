@@ -30,9 +30,8 @@ class Settings:
         api_key = os.getenv("GEMINI_API_KEY", "").strip()
         if not api_key:
             raise ConfigurationError(
-                "GEMINI_API_KEY is required". Add it to your environment or .env file."
-            )
-
+                "GEMINI_API_KEY is required. Add it to your environment or .env file."
+    )
         model = os.getenv("GEMINI_MODEL", "gemini-1.5-flash").strip()
         if not model:
            raise ConfigurationError("GEMINI_MODEL must not be empty.")
@@ -44,7 +43,7 @@ class Settings:
             max_resume_characters = int(max_resume_value)
         except ValueError as exc:
             raise ConfigurationError(
-                "GEMINI_TIMEOUT_SECONDS and MAX_RESUME_CHARACTERS must be numeric."
+                "GEMINI_TIMEOUT_SECONDS and MAX_RESUME_CHARACTERS must be numbers."
             ) from exc
 
         if not math.isfinite(timeout) or timeout <= 0:
@@ -52,7 +51,9 @@ class Settings:
                 "GEMINI_TIMEOUT_SECONDS must be a finite number greater than 0."
             )
         if max_resume_characters <= 0:
-            raise ConfigurationError("MAX_RESUME_CHARACTERS must be greater than 0.")
+            raise ConfigurationError(
+               "MAX_RESUME_CHARACTERS must be greater than 0."
+                )
 
         return cls(
                  gemini_api_key=api_key,

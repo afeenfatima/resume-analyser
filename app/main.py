@@ -41,10 +41,11 @@ def main() -> None:
 
     try:
         settings = Settings.from_env()
+        print(settings)
     except ConfigurationError as exc:
         logger.error("Application configuration is invalid: %s", exc)
         st.error(
-            "The application is not configured. Set OPENAI_API_KEY in your "
+            "The application is not configured. Set GEMINI_API_KEY in your "
             "environment or .env file, then restart the app."
         )
         st.stop()

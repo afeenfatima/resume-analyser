@@ -6,7 +6,7 @@ import streamlit as st
 
 
 from config.settings import Settings
-from infrastructure.openai_gateway import OpenAIAnalysisGateway
+from infrastructure.gemini_gateway import GeminiAnalysisGateway
 from services.resume_service import ResumeAnalysisService
 
 
@@ -20,7 +20,7 @@ def get_resume_analysis_service() -> ResumeAnalysisService:
     settings = Settings.from_env()
     
     return ResumeAnalysisService(
-        gateway=geminiAnalysisGateway(
+        gateway=GeminiAnalysisGateway(
              settings.gemini_api_key,
              settings.gemini_model,
 ),
